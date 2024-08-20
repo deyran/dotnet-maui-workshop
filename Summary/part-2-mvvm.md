@@ -34,7 +34,7 @@ Creating a list of monkeys and populating that inside of our user interface Inst
 
 * When a ViewModel class inherits from the ObservableObject class, it automatically handles property change notifications without requiring manual implementation of the interface.
 
-2. Implements the BaseViewModel class as shown in the code below:
+2. Implements the *BaseViewModel* class as shown in the code below:
    
 ```
 namespace MonkeyFinder.ViewModel;
