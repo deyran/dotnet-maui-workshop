@@ -19,15 +19,12 @@ public partial class MonkeysViewModel : BaseViewModel
         if (monkey is null)
             return;
 
-        /*
-        1. Navigate to DetailsPage
-        2. To pass values to DetailsPage you can do as shown in the code below
-            await Shell.Current.GoToAsync($"{nameof(DetailsPage)}?id={monkey.Name}");
+        var monkeyDictionary = new Dictionary<string, object>
+        {
+            {"Monkey", monkey }
+        };
 
-        https://youtu.be/DuNLR_NJv8U?t=8987
-        */
-        await Shell.Current.GoToAsync($"{nameof(DetailsPage)}");
-
+        await Shell.Current.GoToAsync($"{nameof(DetailsPage)}", true, monkeyDictionary);
     }
 
 

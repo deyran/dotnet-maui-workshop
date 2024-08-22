@@ -9,13 +9,22 @@ async Task GoToDetailsAsync(Monkey monkey)
     if (monkey is null)
         return;
 
-    await Shell.Current.GoToAsync($"{nameof(DetailsPage)}", true, 
-        new Dictionary<string, object>
-        {
-            {"Monkey",monkey}
-        });
+    var monkeyDictionary = new Dictionary<string, object>
+    {
+        {"Monkey", monkey }
+    };
+
+    await Shell.Current.GoToAsync($"{nameof(DetailsPage)}", true, monkeyDictionary);
 }
 ```
+
+* The GoToDetailsAsync method is responsible for navigation to the DetailsPage while passing a monkey object as a parameter.
+
+* The method then navigates to a page named DetailsPage using Shell.Current.GoToAsync.
+
+* The second argument (true) indicates that the navigation should be animated (e.g., sliding or fading between pages).
+
+* A new *Dictionary<string, object>* called **monkeyDictionary** is created to pass a monkey object using the key "Monkey". This allows the monkey object to be associated with that specific key during navigation.
 
 2. Open and edit **MainPage.xaml** as shown in the code below:
 
