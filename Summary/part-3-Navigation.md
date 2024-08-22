@@ -58,6 +58,11 @@ public partial class DetailsPage : ContentPage
 		InitializeComponent();
 		BindingContext = viewModel;
 	}
+
+    protected override void OnNavigatedTo(NavigatedToEventArgs args)
+    {
+        base.OnNavigatedTo(args);
+    }
 }
 ```
 
@@ -94,7 +99,7 @@ public partial class AppShell : Shell
 }
 ```
 
-6. Open the MauiProgram.cs to add **build.Services** as shown in the code below:
+6. Open the **MauiProgram.cs** to add **build.Services** as shown in the code below:
    
 ```
 ...
@@ -204,3 +209,5 @@ builder.Services.AddTransient<DetailsPage>();
 </ScrollView>
 ...
 ```
+
+https://youtu.be/DuNLR_NJv8U?t=9864
