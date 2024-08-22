@@ -25,6 +25,7 @@ public partial class MonkeysViewModel : BaseViewModel
         };
 
         await Shell.Current.GoToAsync($"{nameof(DetailsPage)}", true, monkeyDictionary);
+
     }
 
 

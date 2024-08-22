@@ -1,6 +1,6 @@
 # [Implementing navigation in .Net MAUI # passing parameters](https://youtu.be/DuNLR_NJv8U?t=8763)
 
-1. Open the **MonkeysViewModel** class and add the code below:
+1. The GoToDetailsAsync method, the method implemented in the code below,  is responsible for navigation to the DetailsPage while passing a monkey object as a parameter. Open the **MonkeysViewModel** class and add the code below:
    
 ```
 [RelayCommand]
@@ -18,15 +18,13 @@ async Task GoToDetailsAsync(Monkey monkey)
 }
 ```
 
-* The GoToDetailsAsync method is responsible for navigation to the DetailsPage while passing a monkey object as a parameter.
-
 * The method then navigates to a page named DetailsPage using Shell.Current.GoToAsync.
 
 * The second argument (true) indicates that the navigation should be animated (e.g., sliding or fading between pages).
 
 * A new *Dictionary<string, object>* called **monkeyDictionary** is created to pass a monkey object using the key "Monkey". This allows the monkey object to be associated with that specific key during navigation.
 
-2. Open and edit **MainPage.xaml** as shown in the code below:
+2. We need to call this method. Open and edit **MainPage.xaml** as shown in the code below:
 
 ```
 
@@ -60,11 +58,6 @@ public partial class DetailsPage : ContentPage
 		InitializeComponent();
 		BindingContext = viewModel;
 	}
-
-    protected override void OnNavigatedTo(NavigatedToEventArgs args)
-    {
-        base.OnNavigatedTo(args);
-    }
 }
 ```
 
