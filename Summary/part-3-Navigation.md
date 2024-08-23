@@ -137,6 +137,14 @@ builder.Services.AddTransient<DetailsPage>();
 
 * **xmlns:viewmodel="clr-namespace:MonkeyFinder.ViewModel"** - This statement defines viewmodel as alias for the classes in the **MonkeyFinder.ViewModel** folder. This makes it easier to refer to those classes in the XAML code.
 
+* **x:DataType="viewmodel:MonkeyDetailsViewModel"** - This line tells the XAML page the binding context (source of data to display). The UI elements will use the data and properties from the **MonkeyDetailsViewModel** class.
+
+* These two lines work together like this:
+
+    1. The **viewmodel** alias is created to easier access to the classes  from the **MonkeyFinder.ViewModel** folder
+
+    2. the second line uses the **viewmodel** alias to tell the XAML page that **MonkeyDetailsViewModel** class will be used as the binding context.
+
 2. `ScrollView`, `VerticalStackLayout` and `Grid` to layout
    
 ```
