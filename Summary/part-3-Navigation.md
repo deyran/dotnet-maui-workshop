@@ -18,9 +18,9 @@ async Task GoToDetailsAsync(Monkey monkey)
 }
 ```
 
-* The method then navigates to a page named DetailsPage using Shell.Current.GoToAsync.
+* The method GoToDetailsAsync navigates to a page named DetailsPage using Shell.Current.GoToAsync.
 
-* The second argument (true) indicates that the navigation should be animated (e.g., sliding or fading between pages).
+* The second argument (true) Shell.Current.GoToAsync line indicates that the navigation should be animated (e.g., sliding or fading between pages).
 
 * A new *Dictionary<string, object>* called **monkeyDictionary** is created to pass a monkey object using the key "Monkey". This allows the monkey object to be associated with that specific key during navigation.
 
