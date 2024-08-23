@@ -135,6 +135,8 @@ builder.Services.AddTransient<DetailsPage>();
 </ContentPage>
 ```
 
+* **xmlns:viewmodel="clr-namespace:MonkeyFinder.ViewModel"** - This statement defines viewmodel as alias for the classes in the **MonkeyFinder.ViewModel** folder. This makes it easier to refer to those classes in the XAML code.
+
 2. `ScrollView`, `VerticalStackLayout` and `Grid` to layout
    
 ```
