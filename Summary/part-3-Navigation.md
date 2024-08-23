@@ -209,5 +209,3 @@ builder.Services.AddTransient<DetailsPage>();
 </ScrollView>
 ...
 ```
-
-https://youtu.be/DuNLR_NJv8U?t=9864
