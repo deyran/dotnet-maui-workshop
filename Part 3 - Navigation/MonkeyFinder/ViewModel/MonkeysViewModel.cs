@@ -4,12 +4,18 @@ namespace MonkeyFinder.ViewModel;
 
 public partial class MonkeysViewModel : BaseViewModel
 {
-    public ObservableCollection<Monkey> Monkeys { get; } = new();
     MonkeyService monkeyService;
-    public MonkeysViewModel(MonkeyService monkeyService)
+    public ObservableCollection<Monkey> Monkeys { get; } = new();
+    
+    IConnectivity connectivity;
+
+    public MonkeysViewModel(MonkeyService monkeyService, ObservableCollection<Monkey> monkeys, IConnectivity connectivity)
     {
         Title = "Monkey Finder";
         this.monkeyService = monkeyService;
+        Monkeys = monkeys;
+
+        this.connectivity = connectivity;
     }
 
 
