@@ -1,4 +1,4 @@
-# [Implementing Platform Features](https://youtu.be/DuNLR_NJv8U?t=10700)
+# [Implementing Platform Features](https://youtu.be/DuNLR_NJv8U?t=10737)
 
 In this section, we will see:
 
