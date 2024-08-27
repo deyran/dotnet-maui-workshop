@@ -16,6 +16,8 @@ public partial class MonkeysViewModel : BaseViewModel
 {
     ...
 
+    IConnectivity connectivity;
+
     public MonkeysViewModel(..., IConnectivity connectivity)
     {
         ...
