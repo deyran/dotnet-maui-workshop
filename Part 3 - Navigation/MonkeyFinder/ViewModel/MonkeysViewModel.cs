@@ -4,36 +4,13 @@ namespace MonkeyFinder.ViewModel;
 
 public partial class MonkeysViewModel : BaseViewModel
 {
-    MonkeyService monkeyService;
     public ObservableCollection<Monkey> Monkeys { get; } = new();
-    
-    IConnectivity connectivity;
-
-    public MonkeysViewModel(MonkeyService monkeyService, ObservableCollection<Monkey> monkeys, IConnectivity connectivity)
+    MonkeyService monkeyService;
+    public MonkeysViewModel(MonkeyService monkeyService)
     {
         Title = "Monkey Finder";
         this.monkeyService = monkeyService;
-        Monkeys = monkeys;
-
-        this.connectivity = connectivity;
     }
-
-
-    [RelayCommand]
-    async Task GoToDetailsAsync(Monkey monkey)
-    {
-        if (monkey is null)
-            return;
-
-        var monkeyDictionary = new Dictionary<string, object>
-        {
-            {"Monkey", monkey }
-        };
-
-        await Shell.Current.GoToAsync($"{nameof(DetailsPage)}", true, monkeyDictionary);
-
-    }
-
 
     [RelayCommand]
     async Task GetMonkeysAsync()
@@ -46,10 +23,10 @@ public partial class MonkeysViewModel : BaseViewModel
             IsBusy = true;
             var monkeys = await monkeyService.GetMonkeys();
 
-            if (Monkeys.Count != 0)
+            if(Monkeys.Count != 0)
                 Monkeys.Clear();
-
-            foreach (var monkey in monkeys)
+                
+            foreach(var monkey in monkeys)
                 Monkeys.Add(monkey);
 
         }
