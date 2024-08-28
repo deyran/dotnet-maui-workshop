@@ -23,10 +23,10 @@ public partial class MonkeysViewModel : BaseViewModel
             IsBusy = true;
             var monkeys = await monkeyService.GetMonkeys();
 
-            if(Monkeys.Count != 0)
+            if (Monkeys.Count != 0)
                 Monkeys.Clear();
-                
-            foreach(var monkey in monkeys)
+
+            foreach (var monkey in monkeys)
                 Monkeys.Add(monkey);
 
         }
@@ -41,4 +41,19 @@ public partial class MonkeysViewModel : BaseViewModel
         }
 
     }
+
+    [RelayCommand]
+    async Task GoToDetailsAsync(Monkey monkey)
+    {
+        if (monkey is null)
+            return;
+
+        var monkeyDictionary = new Dictionary<string, object>
+        {
+            {"Monkey", monkey }
+        };
+
+        await Shell.Current.GoToAsync($"{nameof(DetailsPage)}", true, monkeyDictionary);
+    }
+
 }
