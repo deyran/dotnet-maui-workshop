@@ -11,7 +11,7 @@ In this section, we will see:
 We can easily check to see if our user is connected to the internet with the built in **IConnectivity** of .NET MAUI
 
 
-1. Open the **MonkeysViewModel** class and implement the **IConnectivity** and shown in the code below:
+1. Open the **MonkeysViewModel** class and inject the **IConnectivity** into the code as shown in the code below:
 
 ```
 ...
@@ -84,3 +84,23 @@ builder.Services.AddSingleton<IMap>(Map.Default);
 
 ## [Find Closest Monkey](https://youtu.be/DuNLR_NJv8U?t=11323)
 
+Open the **MonkeysViewModel** class and inject the **IGeolocation** into the code as shown in the code below:
+
+```
+*** 
+public partial class MonkeysViewModel : BaseViewModel
+{
+    ...
+    IConnectivity connectivity; 
+    IGeolocation geolocation;
+
+    public MonkeysViewModel(MonkeyService monkeyService, IConnectivity connectivity, IGeolocation geolocation)
+    {
+        ...
+        this.connectivity = connectivity;
+        this.geolocation = geolocation;
+    }
+
+    ...
+}
+```

@@ -7,15 +7,19 @@ public partial class MonkeysViewModel : BaseViewModel
     public ObservableCollection<Monkey> Monkeys { get; } = new();
     MonkeyService monkeyService;
 
-    IConnectivity connectivity;
+    IConnectivity connectivity; 
+    IGeolocation geolocation;
 
     public MonkeysViewModel(MonkeyService monkeyService, 
-        IConnectivity connectivity)
+        IConnectivity connectivity,
+        IGeolocation geolocation)
     {
         Title = "Monkey Finder";
         this.monkeyService = monkeyService;
 
         this.connectivity = connectivity;
+        this.geolocation = geolocation;
+
     }
     
     [RelayCommand]
