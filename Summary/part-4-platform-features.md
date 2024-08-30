@@ -154,3 +154,15 @@ async Task GetClosestMonkey()
     }
 }
 ```
+
+3. In the **MainPage.xaml** add the following button in the code:
+
+```
+<Button Text="Find closest" 
+        Command="{Binding GetClosestMonkeyCommand}"
+        IsEnabled="{Binding IsNotBusy}"
+        Grid.Row="1"
+        Grid.Column="1"
+        Style="{StaticResource ButtonOutline}"
+        Margin="8"/>
+```
