@@ -166,3 +166,47 @@ async Task GetClosestMonkey()
         Style="{StaticResource ButtonOutline}"
         Margin="8"/>
 ```
+
+## [Opening Maps](https://youtu.be/DuNLR_NJv8U?t=11928)
+
+1. Open the MonkeyDetailsViewModel.cs file and edit as shown in the code below:
+
+```
+...
+
+public partial class MonkeyDetailsViewModel : BaseViewModel
+{
+    IMap map;
+    public MonkeyDetailsViewModel(IMap map)
+    {
+        this.map = map;
+    }
+
+    ...
+    
+    [RelayCommand]
+    async Task OpenMapAsync()
+    {
+        try
+        {
+            var mapLaunchOptions = new MapLaunchOptions
+            { 
+                Name = Monkey.Name,
+                NavigationMode = NavigationMode.None
+            };
+
+            await map.OpenAsync(Monkey.Latitude, 
+                                Monkey.Longitude, 
+                                mapLaunchOptions);
+        }
+        catch (Exception ex)
+        {
+            Debug.WriteLine($"Unable open map: {ex.Message}");
+            await Shell.Current.DisplayAlert("Error!", ex.Message, "OK");
+        }
+    }
+}
+```
+
+2. A
+3. A
