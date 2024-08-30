@@ -169,7 +169,7 @@ async Task GetClosestMonkey()
 
 ## [Opening Maps](https://youtu.be/DuNLR_NJv8U?t=11928)
 
-1. Open the MonkeyDetailsViewModel.cs file and edit as shown in the code below:
+1. Open the **MonkeyDetailsViewModel.cs** file and edit as shown in the code below:
 
 ```
 ...
@@ -183,7 +183,7 @@ public partial class MonkeyDetailsViewModel : BaseViewModel
     }
 
     ...
-    
+
     [RelayCommand]
     async Task OpenMapAsync()
     {
@@ -208,5 +208,65 @@ public partial class MonkeyDetailsViewModel : BaseViewModel
 }
 ```
 
-2. A
-3. A
+2. Now open the DetailsPage.xaml page and place a button on it to open the map
+
+```
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MonkeyFinder.DetailsPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:viewmodel="clr-namespace:MonkeyFinder.ViewModel"
+    x:DataType="viewmodel:MonkeyDetailsViewModel"
+    Title="{Binding Monkey.Name}">
+    
+    <ScrollView>
+        <Grid RowDefinitions="Auto,Auto,*">
+            <BoxView
+                BackgroundColor="{StaticResource Primary}"
+                Grid.RowSpan="2"
+                HorizontalOptions="Fill"
+                VerticalOptions="Fill"/>
+
+            <Border StrokeShape="RoundRectangle 80"
+                    Stroke="White"
+                    StrokeThickness="6"
+                    HeightRequest="172"
+                    WidthRequest="172"
+                    Margin="0,8,0,0"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center">
+                <Image Aspect="AspectFill"
+                        HeightRequest="160"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        Source="{Binding Monkey.Image}"
+                        WidthRequest="160"/>
+            </Border>
+
+            <Label Style="{StaticResource LargeLabel}" 
+                   Grid.Row="1"
+                   TextColor="White"
+                   FontAttributes="Bold"
+                   Text="{Binding Monkey.Name}" 
+                   HorizontalOptions="Center"
+                   Margin="0,0,0,8"/>
+
+            <VerticalStackLayout Grid.Row="2" Padding="10" Spacing="10">
+                <Label Style="{StaticResource MediumLabel}" Text="{Binding Monkey.Details}" />
+                <Label Style="{StaticResource SmallLabel}" Text="{Binding Monkey.Location, StringFormat='Location: {0}'}" />
+                <Label Style="{StaticResource SmallLabel}" Text="{Binding Monkey.Population, StringFormat='Population: {0}'}" />
+                
+                <Button Text="Show on Map"
+	            Command="{Binding OpenMapCommand}"
+	            HorizontalOptions="Center"
+	            WidthRequest="200"
+	            Margin="8"
+	            Style="{StaticResource ButtonOutLine}" />
+
+            </VerticalStackLayout>
+        </Grid>
+
+    </ScrollView>
+</ContentPage>
+```
