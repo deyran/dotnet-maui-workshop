@@ -23,11 +23,17 @@
             ItemsSource="{Binding Monkeys}"
             SelectionMode="None">
 
-                <CollectionView.ItemsLayout>
-                    <GridItemsLayout Orientation="Vertical"
-                                     Span="3">                        
-                    </GridItemsLayout>
-                </CollectionView.ItemsLayout>
+                <CollectionView.EmptyView>
+                    <StackLayout VerticalOptions="Center"
+                                 HorizontalOptions="Center"
+                                 WidthRequest="200"
+                                 HeightRequest="200">
+                        <Image Source="nodata.png"
+                               HorizontalOptions="CenterAndExpand"
+                               VerticalOptions="CenterAndExpand"
+                               Aspect="AspectFill" />
+                    </StackLayout>
+                </CollectionView.EmptyView>
                 
                 
                 <CollectionView.ItemTemplate>

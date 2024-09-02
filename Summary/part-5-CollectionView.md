@@ -49,3 +49,34 @@
     </Grid>
 </ContentPage>
 ```
+
+3. EmptyView
+
+
+```
+<ContentPage  ... >
+
+    <Grid ...>
+
+        <RefreshView Grid.ColumnSpan="2">
+            <CollectionView ... >
+                ...
+                <CollectionView.EmptyView>
+                    <StackLayout VerticalOptions="Center"
+                                 HorizontalOptions="Center"
+                                 WidthRequest="200"
+                                 HeightRequest="200">
+                        <Image Source="nodata.png"
+                               HorizontalOptions="CenterAndExpand"
+                               VerticalOptions="CenterAndExpand"
+                               Aspect="AspectFill" />
+                    </StackLayout>
+                </CollectionView.EmptyView>
+                ...
+
+            </CollectionView>
+        </RefreshView>
+       
+    </Grid>
+</ContentPage>
+```
