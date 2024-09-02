@@ -34,8 +34,7 @@
                                Aspect="AspectFill" />
                     </StackLayout>
                 </CollectionView.EmptyView>
-                
-                
+               
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="model:Monkey">
                         <Grid Padding="10">
