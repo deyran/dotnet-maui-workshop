@@ -1,4 +1,4 @@
-# [CollectionView](https://youtu.be/DuNLR_NJv8U?t=12411)
+# [CollectionView](https://youtu.be/DuNLR_NJv8U?t=12838)
 
 1. Is a view for presenting lists of data.
 2. Use different layout specifications.
