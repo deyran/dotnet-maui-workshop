@@ -14,7 +14,7 @@
 
     <Grid ...>
 
-        <RefreshView>
+        <RefreshView Grid.ColumnSpan="2">
             <CollectionView ... >
                 ....
             </CollectionView>
@@ -24,4 +24,28 @@
 </ContentPage>
 ```
 
-2. AAAA
+2. GridItemsLayout
+
+```
+<ContentPage  ... >
+
+    <Grid ...>
+
+        <RefreshView Grid.ColumnSpan="2">
+            <CollectionView ... >
+                ...
+
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical"
+                                     Span="3">                        
+                    </GridItemsLayout>
+                </CollectionView.ItemsLayout>
+
+                ...
+
+            </CollectionView>
+        </RefreshView>
+       
+    </Grid>
+</ContentPage>
+```
