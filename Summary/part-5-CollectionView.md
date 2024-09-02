@@ -6,3 +6,22 @@
 4. Alternative to ListView.
 
 ## [Adding Pull-to-Refresh](https://youtu.be/DuNLR_NJv8U?t=12625)
+
+1. In the MainPage.xaml file, wrap the CollectionView element with the RefreshView element as shown in the code below:
+
+```
+<ContentPage  ... >
+
+    <Grid ...>
+
+        <RefreshView>
+            <CollectionView ... >
+                ....
+            </CollectionView>
+        </RefreshView>
+       
+    </Grid>
+</ContentPage>
+```
+
+2. AAAA
