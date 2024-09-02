@@ -2,4 +2,5 @@
 
 1. Is a view for presenting lists of data.
 2. Use different layout specifications.
-3. More flexilbe.
+3. More flexible.
+4. Alternative to ListView.
