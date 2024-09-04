@@ -80,5 +80,3 @@
     </Grid>
 </ContentPage>
 ```
-
-https://youtu.be/DuNLR_NJv8U?t=13487
